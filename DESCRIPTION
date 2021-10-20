@@ -1,0 +1,29 @@
+Package: Echidna
+Type: Package
+Title: Single Cell Immune Repertoire and Transcriptome Simulation
+Description: Simulation methods for the evolution of BCR and TCR repertoires. The heavy and light chain variable region of both human and mice can be simulated in a time-dependent fashion. Repertoires of productive sequence can be simulated. The algorithm begins with a set of initial V-D-J recombination event, and develop through the main loop of the algorithm, with each iteration representing one simulated time step. Events including new VDJ recombination, somatic hypermutation, cell death, class switching, transcriptome change are possible at each time step, contributing to a diverse final repertoire and corresponding transcriptome matrix.
+Version: 0.1
+License: GPL-2
+Encoding: UTF-8
+Author: Han Jiami <jiami.han@bsse.ethz.ch>
+Maintainer: Han Jiami <jiami.han@bsse.ethz.ch>
+Depends: R (>= 3.5.0)
+VignetteBuilder: knitr
+Suggests: 
+    rmarkdown,
+    knitr
+Imports: 
+          stringr, 
+          magrittr,
+          reshape2, 
+          dplyr, 
+          do, 
+          igraph, 
+          stats, 
+          ggplot2, 
+          Seurat,
+          keras,
+          tensorflow
+LazyData: TRUE
+LazyDataCompression: xz
+RoxygenNote: 7.1.1
