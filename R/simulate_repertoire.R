@@ -889,7 +889,8 @@ simulate_repertoire <- function(initial.size.of.repertoire,
     clonotypes<-merge(clonotypes,cdr3_df,by="clonotype_id",all.x=T)
     clonotypes<-clonotypes[!(duplicated(clonotypes$clonotype_id)),]
     names(clonotypes)[4:5]<-c("cdr3","cdr3_nt")
-    all_contig_annotations<-data.frame(barcode,is_cell,raw_contig_id,high_confidence,Length,chain,v_gene,d_gene,j_gene,c_gene,full_length,productive,cdr3,cdr3_nt,reads,raw_clonotype_id)
+    all_contig_annotations<-data.frame(barcode,is_cell,raw_contig_id,high_confidence,Length,chain,v_gene,d_gene,j_gene,c_gene,full_length,productive,cdr3,cdr3_nt,reads,umis,raw_clonotype_id)
+    all_contig_annotations$raw_consensus_id<-paste(raw_clonotype_id,"consensus",substr(raw_contig_id,nchar(raw_contig_id),nchar(raw_contig_id)),sep = "_")
   }
 
   raw_consensus<-.WRITE.CONSENSUS(clonotype_id,sequence.combined = seq_combi,barcode.unique = barcode_uniq,clonotypes.dataframe = clonotypes)
