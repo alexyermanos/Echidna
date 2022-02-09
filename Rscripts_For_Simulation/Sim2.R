@@ -4,7 +4,7 @@ reph<-mus_b_h[[1]][c(1,2),]
 repl<-mus_b_l[[1]][c(1),]
 mus_b_h[[1]]<-rbind(mus_b_h[[1]],reph[rep(seq_len(nrow(reph)), each = 30), ])
 mus_b_l[[1]]<-rbind(mus_b_l[[1]],repl[rep(seq_len(nrow(repl)), each = 20), ])
-uneven<-scImmuneSimulation::simulate_repertoire(initial.size.of.repertoire = 5000,
+uneven<-simulate_repertoire(initial.size.of.repertoire = 5000,
                                                 duration.of.evolution = 0,
                                                 vdj.branch.prob = 0,
                                                 cell.division.prob = c(0,0),
